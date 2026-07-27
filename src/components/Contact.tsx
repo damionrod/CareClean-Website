@@ -143,7 +143,9 @@ export default function Contact() {
                 </button>
               </div>
             ) : (
-              <form name="quote-request" method="POST" data-netlify="true" onSubmit={handleSubmit} className="space-y-5">
+              <form name="quote-request" method="POST" data-netlify="true" netlify-honeypot="bot-field" onSubmit={handleSubmit} className="space-y-5">
+<input type="hidden" name="form-name" value="quote-request" />
+<p hidden><label>Don't fill this out: <input name="bot-field" /></label></p>
                 <div>
                   <label htmlFor="name" className="block text-sm font-semibold text-brand-navy mb-1.5">
                     Full name <span className="text-red-500">*</span>
