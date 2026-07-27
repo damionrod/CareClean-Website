@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://careclean.co.nz/sitemap.xml
