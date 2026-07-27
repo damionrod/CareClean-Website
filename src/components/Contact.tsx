@@ -1,6 +1,5 @@
 import { useState, type FormEvent } from 'react';
 import { Send, Loader2, CheckCircle2, AlertCircle, Phone, Mail, MapPin } from 'lucide-react';
-import { supabase } from '@/lib/supabase';
 
 const services = [
   'Contract Commercial Cleaning',
@@ -38,22 +37,32 @@ export default function Contact() {
       return;
     }
 
-    const { error } = await supabase.from('quote_requests').insert({
-      name: form.name.trim(),
-      email: form.email.trim(),
-      phone: form.phone.trim() || null,
-      service_type: form.service_type || null,
-      message: form.message.trim() || null,
-    });
+    try {
+      const payload = new URLSearchParams({
+        'form-name': 'quote-request',
+        name: form.name.trim(),
+        email: form.email.trim(),
+        phone: form.phone.trim(),
+        service_type: form.service_type,
+        message: form.message.trim(),
+      });
 
-    if (error) {
+      const response = await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: payload.toString(),
+      });
+
+      if (!response.ok) {
+        throw new Error(`Form submission failed with status ${response.status}`);
+      }
+
+      setStatus('success');
+      setForm({ name: '', email: '', phone: '', service_type: '', message: '' });
+    } catch {
       setStatus('error');
-      setErrorMsg('Something went wrong sending your request. Please try again.');
-      return;
+      setErrorMsg('Something went wrong sending your request. Please try again or call us directly.');
     }
-
-    setStatus('success');
-    setForm({ name: '', email: '', phone: '', service_type: '', message: '' });
   };
 
   return (
@@ -76,13 +85,13 @@ export default function Contact() {
             </p>
 
             <div className="mt-10 space-y-5">
-              <a href="tel:+6421123456" className="flex items-center gap-4 group">
+              <a href="tel:+64274994445" className="flex items-center gap-4 group">
                 <div className="w-12 h-12 rounded-xl bg-brand-green/10 flex items-center justify-center group-hover:bg-brand-green transition-colors">
                   <Phone size={20} className="text-brand-green group-hover:text-white transition-colors" />
                 </div>
                 <div>
                   <div className="text-sm text-gray-500">Call us</div>
-                  <div className="font-semibold text-brand-navy">+64 21 123 456</div>
+                  <div className="font-semibold text-brand-navy">+64 27 499 4445</div>
                 </div>
               </a>
               <a href="mailto:info@careclean.co.nz" className="flex items-center gap-4 group">
@@ -134,7 +143,7 @@ export default function Contact() {
                 </button>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-5">
+              <form name="quote-request" method="POST" data-netlify="true" onSubmit={handleSubmit} className="space-y-5">
                 <div>
                   <label htmlFor="name" className="block text-sm font-semibold text-brand-navy mb-1.5">
                     Full name <span className="text-red-500">*</span>

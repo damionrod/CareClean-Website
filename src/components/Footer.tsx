@@ -26,10 +26,10 @@ export default function Footer() {
               Wellington region.
             </p>
             <div className="flex gap-3 mt-6">
-              {[Facebook, Instagram, Linkedin].map((Icon, i) => (
+              {[[Facebook,"https://www.facebook.com/profile.php?id=61590128714775"],[Instagram,"https://www.instagram.com/careclean2017/"],[Linkedin,"#"]].map(([Icon,url], i) => (
                 <a
                   key={i}
-                  href="#"
+                  href={url}
                   aria-label="Social link"
                   className="w-10 h-10 rounded-full bg-white/10 hover:bg-brand-green flex items-center justify-center transition-colors"
                 >
@@ -59,8 +59,8 @@ export default function Footer() {
             <ul className="space-y-3 text-sm">
               <li className="flex items-center gap-2.5">
                 <Phone size={16} className="text-brand-green-light shrink-0" />
-                <a href="tel:+6421123456" className="hover:text-brand-green-light transition-colors">
-                  +64 21 123 456
+                <a href="tel:+64274994445" className="hover:text-brand-green-light transition-colors">
+                  +64 27 499 4445
                 </a>
               </li>
               <li className="flex items-center gap-2.5">
