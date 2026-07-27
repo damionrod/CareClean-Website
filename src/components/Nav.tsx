@@ -51,7 +51,7 @@ export default function Nav() {
 
           {/* CTA */}
           <a
-            href="tel:+64274994445"
+            href="#contact"
             className="hidden lg:flex items-center gap-2 bg-brand-green hover:bg-brand-green-dark text-white font-semibold text-sm px-5 py-2.5 rounded-full transition-colors duration-200"
           >
             <Phone size={15} />
@@ -84,7 +84,7 @@ export default function Nav() {
               </a>
             ))}
             <a
-              href="tel:+64274994445"
+              href="#contact"
               className="mt-3 flex items-center justify-center gap-2 bg-brand-green text-white font-semibold py-3 rounded-full"
             >
               <Phone size={16} />
