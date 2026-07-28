@@ -78,7 +78,7 @@ export default function Contact() {
               <input type="hidden" name="_subject" value="New CareClean quote request" />
               <input type="hidden" name="_template" value="table" />
               <input type="hidden" name="_captcha" value="false" />
-              <input type="hidden" name="_next" value="https://careclean.co.nz/#contact" />
+              <input type="hidden" name="_next" value="https://careclean.co.nz/" />
               <input type="text" name="_honey" className="hidden" tabIndex={-1} autoComplete="off" />
 
               <div>
