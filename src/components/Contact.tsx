@@ -5,6 +5,8 @@ const services = [
   'Medical & Healthcare Cleaning',
   'School & Childcare Cleaning',
   'Residential Cleaning',
+  'Move-Out / End-of-Tenancy Cleaning',
+  'Professional Carpet Cleaning',
   'Consumables & Hygiene Supplies',
   'Not sure yet',
 ];
@@ -54,7 +56,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <div className="text-sm text-gray-500">Service area</div>
-                  <div className="font-semibold text-brand-navy">Wellington & surrounding areas</div>
+                  <div className="font-semibold text-brand-navy">Wellington, Lower Hutt, Porirua & surrounding areas</div>
                 </div>
               </div>
             </div>
@@ -70,7 +72,7 @@ export default function Contact() {
 
           {/* Right — form */}
           <div className="bg-white rounded-2xl shadow-xl border border-gray-100 p-7 sm:p-9">
-            <form
+            <form id="contact-form"
               action="https://formsubmit.co/info@careclean.co.nz"
               method="POST"
               className="space-y-5"
@@ -78,7 +80,7 @@ export default function Contact() {
               <input type="hidden" name="_subject" value="New CareClean quote request" />
               <input type="hidden" name="_template" value="table" />
               <input type="hidden" name="_captcha" value="false" />
-              <input type="hidden" name="_next" value="https://careclean.co.nz/" />
+              <input type="hidden" name="_next" value="https://careclean.co.nz/#contact" />
               <input type="text" name="_honey" className="hidden" tabIndex={-1} autoComplete="off" />
 
               <div>

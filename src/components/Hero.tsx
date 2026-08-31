@@ -25,9 +25,12 @@ export default function Hero() {
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="max-w-2xl">
-          <div className="inline-flex items-center gap-2 bg-brand-green/20 backdrop-blur-sm border border-brand-green/40 text-brand-green-light px-4 py-1.5 rounded-full text-sm font-medium mb-6">
-            <Star size={14} className="fill-brand-green-light text-brand-green-light" />
-            5-star rated cleaning service
+          <div className="mb-3">
+            <img
+              src="/images/google-5-star-rating-home.png"
+              alt="5.0 Google Rating"
+              className="h-14 sm:h-16 w-auto max-w-full object-contain"
+            />
           </div>
 
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-[1.1] tracking-tight text-balance">
@@ -51,7 +54,7 @@ export default function Hero() {
 
           <div className="mt-10 flex flex-col sm:flex-row gap-4">
             <a
-              href="#contact"
+              href="#contact-form"
               className="group inline-flex items-center justify-center gap-2 bg-brand-green hover:bg-brand-green-dark text-white font-semibold px-7 py-4 rounded-full transition-all duration-200 shadow-lg shadow-brand-green/20 hover:shadow-brand-green/40 hover:-translate-y-0.5"
             >
               Request Your Free Quote Today

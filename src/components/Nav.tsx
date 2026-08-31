@@ -2,11 +2,11 @@ import { useState, useEffect } from 'react';
 import { Menu, X, Phone } from 'lucide-react';
 
 const navLinks = [
-  { label: 'Home', href: '#home' },
-  { label: 'Services', href: '#services' },
-  { label: 'About', href: '#about' },
-  { label: 'Why Us', href: '#why-us' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'Home', href: '/#home' },
+  { label: 'Services', href: '/#services' },
+  { label: 'About', href: '/#about' },
+  { label: 'Why Us', href: '/#why-us' },
+  { label: 'Contact', href: '/#contact' },
 ];
 
 export default function Nav() {
@@ -28,7 +28,7 @@ export default function Nav() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
-          <a href="#home" className="flex items-center gap-3 group">
+          <a href="/#contact-form" className="flex items-center gap-3 group">
             <img
               src="/images/Careclean1-100.jpg"
               alt="CareClean"
@@ -51,7 +51,7 @@ export default function Nav() {
 
           {/* CTA */}
           <a
-            href="#contact"
+            href="/#contact-form"
             className="hidden lg:flex items-center gap-2 bg-brand-green hover:bg-brand-green-dark text-white font-semibold text-sm px-5 py-2.5 rounded-full transition-colors duration-200"
           >
             <Phone size={15} />
@@ -84,7 +84,7 @@ export default function Nav() {
               </a>
             ))}
             <a
-              href="#contact"
+              href="/#contact-form"
               className="mt-3 flex items-center justify-center gap-2 bg-brand-green text-white font-semibold py-3 rounded-full"
             >
               <Phone size={16} />

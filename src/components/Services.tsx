@@ -1,4 +1,4 @@
-import { Building2, Stethoscope, School, Home, Box, ArrowRight } from 'lucide-react';
+import { Building2, Stethoscope, School, Home, Box, Sparkles, ArrowRight } from 'lucide-react';
 
 const services = [
   {
@@ -6,6 +6,7 @@ const services = [
     title: 'Contract Commercial Cleaning',
     description:
       'Reliable commercial cleaning for Wellington businesses. Flexible schedules tailored to your workplace, with detailed cleaning specifications and dedicated account management.',
+    href: '/services/commercial-cleaning',
     features: [
       'Daily, weekly or custom frequencies',
       'Regular quality inspections',
@@ -42,11 +43,25 @@ const services = [
     title: 'Residential Cleaning Services',
     description:
       'Professional home cleaning designed to give you more time for what matters. Regular weekly or fortnightly cleaning, deep cleans, move-in/move-out, and end-of-tenancy cleans.',
+    href: '/services/residential-cleaning',
     features: [
       'Regular or one-off cleans',
       'Move-in & move-out cleaning',
       'Kitchen & bathroom detailing',
       'Interior window cleaning',
+    ],
+  },
+  {
+    icon: Sparkles,
+    title: 'Professional Carpet Cleaning',
+    description:
+      'Professional carpet cleaning for Wellington homes and workplaces using hot water extraction to lift embedded dirt, residues and everyday soiling from carpet fibres.',
+    href: '/services/carpet-cleaning',
+    features: [
+      'Pre-vacuum & carpet inspection',
+      'Professional pre-treatment',
+      'Spot & stain treatment',
+      'Hot water extraction cleaning',
     ],
   },
   {
@@ -97,15 +112,15 @@ export default function Services() {
                   {s.features.map((f) => (
                     <li key={f} className="flex items-center gap-2 text-sm text-gray-700">
                       <span className="w-1.5 h-1.5 rounded-full bg-brand-green" />
-                      {f}
+                      {f === 'Move-in & move-out cleaning' ? <a href="/services/move-out-cleaning" className="hover:text-brand-green transition-colors">{f}</a> : f}
                     </li>
                   ))}
                 </ul>
                 <a
-                  href="#contact"
+                  href={s.href || '#contact'}
                   className="inline-flex items-center gap-1.5 text-brand-green font-semibold text-sm group-hover:gap-2.5 transition-all mt-auto"
                 >
-                  Enquire now
+                  {s.href ? 'Learn more' : 'Enquire now'}
                   <ArrowRight size={15} />
                 </a>
               </div>

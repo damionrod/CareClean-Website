@@ -1,11 +1,15 @@
 import { Phone, Mail, MapPin, Facebook, Instagram, Linkedin } from 'lucide-react';
 
 const links = [
-  { label: 'Home', href: '#home' },
-  { label: 'Services', href: '#services' },
-  { label: 'About', href: '#about' },
-  { label: 'Why Us', href: '#why-us' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'Home', href: '/#home' },
+  { label: 'Services', href: '/#services' },
+  { label: 'About', href: '/#about' },
+  { label: 'Why Us', href: '/#why-us' },
+  { label: 'Contact', href: '/#contact' },
+  { label: 'Residential Cleaning', href: '/services/residential-cleaning' },
+  { label: 'Commercial Cleaning', href: '/services/commercial-cleaning' },
+  { label: 'Move-Out Cleaning', href: '/services/move-out-cleaning' },
+  { label: 'Carpet Cleaning', href: '/services/carpet-cleaning' },
 ];
 
 export default function Footer() {
@@ -71,7 +75,7 @@ export default function Footer() {
               </li>
               <li className="flex items-start gap-2.5">
                 <MapPin size={16} className="text-brand-green-light shrink-0 mt-0.5" />
-                <span>Wellington & surrounding areas</span>
+                <span>Wellington, Lower Hutt, Porirua & surrounding areas</span>
               </li>
             </ul>
           </div>
