@@ -1,0 +1,39 @@
+/* Invoice review is part of Expenses. One compact invoice at a time can be saved. */
+.pr-search{display:block;max-width:340px;margin:10px 0}.pr-search input{width:100%;min-height:38px}
+.pr-bill-list{display:grid;gap:10px}.pr-invoice{border:1px solid #d9e3f4;border-radius:10px;background:#fff;overflow:hidden}
+.pr-invoice-head{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:11px 13px;background:#f6f9fd}
+.pr-invoice-head strong,.pr-invoice-head small{display:block}.pr-invoice-head small{font-size:12px;margin-top:3px;color:#4b6179}
+.pr-invoice-head .pr-state{color:#245d79;font-weight:600}.pr-invoice-head button{white-space:nowrap;padding:7px 10px}
+.pr-invoice [data-pr-items][hidden],.pr-asset[hidden],.pr-message[hidden]{display:none}
+.pr-documents{display:flex;align-items:center;gap:7px;flex-wrap:wrap;padding:8px 12px}
+.pr-documents button,.pr-upload{padding:5px 8px;font-size:12px;border:1px solid #c9d7ec;border-radius:6px;background:#fff;color:#18324a;cursor:pointer}
+.pr-upload input{display:none}.pr-items{padding:0 10px;min-width:0;overflow:visible}
+.pr-column-head,.pr-item{display:grid;grid-template-columns:20px minmax(110px,2.5fr) minmax(82px,1.3fr) minmax(95px,1.5fr) 45px minmax(60px,.85fr) minmax(50px,.75fr) minmax(68px,.85fr) 24px;gap:4px;align-items:center}
+.pr-column-head{padding:3px 4px;font-size:11px;font-weight:650;color:#526881}
+.pr-item{padding:5px 4px;border-top:1px solid #e2eaf5;font-size:12px}.pr-item:nth-child(2n){background:#f9fbff}
+.pr-item label{min-width:0;display:block}.pr-item label>span,.pr-gross small{display:none}
+.pr-item input:not([type=radio]),.pr-item select{box-sizing:border-box;width:100%;min-width:0;min-height:34px;padding:4px 5px;font-size:12px;font-weight:550;border:1px solid #cad7e8;border-radius:5px;background:#fff}
+.pr-item select{padding-right:16px;text-overflow:ellipsis}.pr-item input[name=quantity]{padding-left:3px;padding-right:2px}
+.pr-gross output{display:block;min-height:34px;line-height:34px;font-weight:700;white-space:nowrap}.pr-num{font-weight:700}
+.pr-remove{min-height:32px;padding:2px 5px;border:1px solid #cbd9e9;background:#fff;border-radius:5px}
+.pr-mobile-summary{display:none}.pr-asset{grid-column:2/-1;display:flex;gap:7px;flex-wrap:wrap;padding:5px 0}.pr-asset label{min-width:115px;flex:1}.pr-asset label>span{display:inline}
+.pr-invoice-footer{display:flex;align-items:center;justify-content:flex-end;gap:9px;flex-wrap:wrap;padding:9px 12px}
+.pr-invoice-footer [data-pr-balance]{flex:1 1 270px;font-size:12px;color:#395b75}.pr-invoice-footer button{min-height:36px;padding:7px 10px}
+.pr-correction{flex:1 1 170px;font-size:12px}.pr-correction input{min-height:34px;width:100%}.pr-message{margin:2px 12px 10px;color:#91480a;font-size:12px}
+.pr-list-nav{display:flex;align-items:center;gap:7px;margin-top:12px}.pr-list-nav span{margin-right:auto}
+@media(max-width:680px){
+ .pr-invoice-head{padding:8px;gap:5px}.pr-invoice-head strong{font-size:13px}.pr-invoice-head small{font-size:11px}.pr-invoice-head button{font-size:11px;padding:6px}
+ .pr-documents{padding:5px 7px}.pr-column-head{display:none}.pr-items{padding:0 7px}
+ .pr-item{display:flex;align-items:center;gap:3px;padding:4px 2px;flex-wrap:wrap}.pr-mobile-summary{display:flex;align-items:center;gap:4px;width:100%;min-height:40px;border:0;background:transparent;text-align:left;padding:2px;color:inherit}
+ .pr-mobile-summary span{flex:1 1 35%;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-weight:650;font-size:12px}
+ .pr-mobile-summary small{flex:1 1 25%;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:10px;color:#526881}
+ .pr-mobile-summary strong{flex:0 0 auto;font-size:12px}.pr-item:not(.editing)>:not(.pr-mobile-summary){display:none}
+ .pr-item.editing{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}.pr-item.editing .pr-mobile-summary{grid-column:1/-1}
+ .pr-item.editing label>span,.pr-item.editing .pr-gross small{display:block;font-size:10px;color:#526881}
+ .pr-item.editing .pr-description,.pr-item.editing .pr-category,.pr-item.editing .pr-use-select{grid-column:span 2}
+ .pr-item.editing .pr-num{display:none}.pr-item.editing .pr-qty,.pr-item.editing .pr-amount,.pr-item.editing .pr-gross{grid-column:span 1}
+ .pr-item.editing .pr-gross output{min-height:32px;line-height:32px}.pr-item.editing .pr-remove{grid-column:4;justify-self:end}.pr-item.editing .pr-asset{grid-column:1/-1}
+ .pr-invoice-footer{padding:8px}.pr-invoice-footer [data-pr-balance]{flex-basis:100%}
+}
+
+.pr-item[data-pr-discount]{background:#f1f8ff}.pr-item[data-pr-discount] .pr-amount input{color:#145588}.pr-qty [hidden]{display:none!important}
